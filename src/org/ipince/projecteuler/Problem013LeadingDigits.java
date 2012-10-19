@@ -21,7 +21,7 @@ import java.math.BigInteger;
  * <p>
  * Running time: negligible.
  */
-public class Problem013 {
+public class Problem013LeadingDigits {
 
     private final static String[] NUMBERS = new String[]{
         "37107287533902102798797998220837590246510135740250",
