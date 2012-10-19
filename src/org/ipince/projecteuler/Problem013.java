@@ -17,6 +17,9 @@ import java.math.BigInteger;
  * entire 50-digit numbers. It suffices to add the first 11 digits of each
  * number, which we can easily do. These numbers are still bigger than
  * {@link Integer#MAX_VALUE} (2^31 - 1), so we use {@link BigInteger}s instead.
+ * 
+ * <p>
+ * Running time: negligible.
  */
 public class Problem013 {
 
