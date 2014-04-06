@@ -5,7 +5,6 @@
 
 import math
 
-
 def solve():
   anagrams = find_anagrams(load_words('words.txt'))
   anagrams = sorted(anagrams, key=lambda l: -len(l[0]))
