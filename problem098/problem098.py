@@ -1,6 +1,23 @@
 #!/usr/bin/python
 
+# Solution for Project Euler problem 98, "Anagramic Squares".
+# http://projecteuler.net/problem=98
+
 import math
+
+
+def solve():
+  anagrams = find_anagrams(load_words('words.txt'))
+  anagrams = sorted(anagrams, key=lambda l: -len(l[0]))
+  candidate = None
+  while anagrams:
+    wordset = anagrams.pop(0)
+    if len(wordset[0]) < len(str(candidate)):
+      return candidate
+    largest = largest_anagram_square(wordset)
+    if largest and largest > candidate:
+      candidate = largest
+  return None
 
 def load_words(filename):
   """Loads a list of words from a file
@@ -22,6 +39,27 @@ def find_anagrams(words):
     canonicals[canonical].append(word)
   anagrams = [value for value in canonicals.itervalues() if len(value) > 1]
   return anagrams
+
+def largest_anagram_square(wordset):
+  """Finds the largest anagramic square in the word set, if any.
+  """
+  solutions = set()
+  squares = get_squares(len(wordset[0]))
+  for word in wordset:
+    for sq in squares:
+      mapping = get_mapping(word, sq)
+      if mapping:
+        for w in wordset:
+          if w == word:
+            continue # ignore the word we used to get mapping with
+          candidate = check_mapping(w, mapping, squares)
+          if candidate:
+            print 'Found match! Words are %s (%d), %s (%d). Mapping is %s' % (word, sq, w, candidate, mapping)
+            solutions.add(candidate)
+            solutions.add(sq)
+  if solutions:
+    return max(solutions)
+  return None
 
 sq_cache = {}
 def get_squares(length):
@@ -68,40 +106,6 @@ def check_mapping(word, mapping, squares):
     # Note: no need to check for leading zeros since squares should only
     # contain square numbers with the right number of digits.
     return sq
-  return None
-
-def largest_anagram_square(wordset):
-  """Finds the largest anagramic square in the word set, if any.
-  """
-  solutions = set()
-  squares = get_squares(len(wordset[0]))
-  for word in wordset:
-    for sq in squares:
-      mapping = get_mapping(word, sq)
-      if mapping:
-        for w in wordset:
-          if w == word:
-            continue # ignore the word we used to get mapping with
-          candidate = check_mapping(w, mapping, squares)
-          if candidate:
-            print 'Found match! Words are %s (%d), %s (%d). Mapping is %s' % (word, sq, w, candidate, mapping)
-            solutions.add(candidate)
-            solutions.add(sq)
-  if solutions:
-    return max(solutions)
-  return None
-
-def solve():
-  anagrams = find_anagrams(load_words('words.txt'))
-  anagrams = sorted(anagrams, key=lambda l: -len(l[0]))
-  candidate = None
-  while anagrams:
-    wordset = anagrams.pop(0)
-    if len(wordset[0]) < len(str(candidate)):
-      return candidate
-    largest = largest_anagram_square(wordset)
-    if largest and largest > candidate:
-      candidate = largest
   return None
 
 print solve()
