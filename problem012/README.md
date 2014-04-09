@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty**: Easy
+
 **Idea:**
 Exhaustive search, no optimizations.
 
@@ -14,5 +16,5 @@ Calculating the number of divisors of `n` is fast, since we only need to check f
 
 --
 
-The solution runs in **6.5** seconds (slow, but good enough given solution was easy) and returns the answer **76576500**.
+The solution runs in **6.5 seconds** (slow, but good enough given solution was easy) and returns the answer **76576500**.
 
