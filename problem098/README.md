@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** Easy.
+
 **Idea:**
 No special tricks. Plain old brute force, but with some small optimizations along the way. Judging the problem statement, I didn't think any math would yield a simple solution, the search space seemed small enough (a list of 2,000 words and their possible combinations), and the problem itself explicitly says "find all the square anagram word pairs", so brute force it is!
 

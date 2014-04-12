@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** Easy.
+
 **Idea:**
 Exhaustive search, but reducing the search space to something manageable.
 I attempted to do this with pencil + paper, but could not constrain the space

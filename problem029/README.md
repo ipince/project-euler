@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** Easy.
+
 **Idea:**
 Brute force.
 

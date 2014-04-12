@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** Medium.
+
 **Idea:**
 Search the space, but (a) find a reasonable upper bound and (b) search the set of possible fifth power sums instead of
 searching linearly from 1 to n.

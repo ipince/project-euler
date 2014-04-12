@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** Easy
+
 **Idea:**
 Exhaustive search, no optimizations.
 

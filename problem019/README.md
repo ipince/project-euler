@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** Easy
+
 **Idea:**
 Count the Sundays manually, with pencil and paper (or a keyboard and vim).
 
