@@ -4,6 +4,8 @@
 
 ---
 
+**Difficulty:** [Easy | Medium | Hard | Really hard]
+
 **Idea:**
 <Idea>
 
